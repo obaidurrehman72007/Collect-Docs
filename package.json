@@ -1,0 +1,9 @@
+{
+  "name": "university-docs-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install-all": "npm install --prefix collect_docs_backend-main && npm install --prefix collect_docs_frontend-main",
+    "build": "npm run build --prefix collect_docs_frontend-main"
+  }
+}

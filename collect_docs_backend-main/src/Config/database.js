@@ -1,6 +1,7 @@
 // src/Config/database.js
 import { Sequelize } from 'sequelize';
 import dotenv from 'dotenv';
+import mysql2 from 'mysql2'; 
 
 dotenv.config();
 

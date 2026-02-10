@@ -1,13 +1,24 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "collect_docs_backend-main/src/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "collect_docs_frontend-main/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/collect_docs_backend-main/src/server.js"
+      "destination": "collect_docs_backend-main/src/server.js"
     },
     {
       "source": "/(.*)",
-      "destination": "/collect_docs_frontend-main/$1"
+      "destination": "collect_docs_frontend-main/$1"
     }
   ]
 }
