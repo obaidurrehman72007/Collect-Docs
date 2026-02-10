@@ -1,0 +1,205 @@
+@import "tailwindcss";
+@layer base {
+  body {
+    color: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+}
+/* Custom scrollbar for a premium look */
+::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 10px;
+}
+button:hover {
+  cursor: pointer;
+}
+.matrix-loader {
+  background:
+    linear-gradient(
+      transparent calc(1 * 100% / 6),
+      #fff 0 calc(3 * 100% / 6),
+      transparent 0
+    ),
+    linear-gradient(
+      transparent calc(2 * 100% / 6),
+      #fff 0 calc(4 * 100% / 6),
+      transparent 0
+    ),
+    linear-gradient(
+      transparent calc(3 * 100% / 6),
+      #fff 0 calc(5 * 100% / 6),
+      transparent 0
+    );
+  background-size: 10px 400%;
+  background-repeat: no-repeat;
+  animation-name: matrix;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+p {
+  line-height: 1.8;
+  
+}
+button {
+  outline: none;
+  
+}
+h1{
+  font-weight: 700;
+
+}
+.animation-paused {
+  animation-play-state: paused;
+}
+@media screen and (max-width: 640px) {
+  p {
+    font-size: 13px;
+  }
+  main >h1{
+    font-size: 2rem;
+  }
+  main >h2{
+    font-size: 1.5rem;
+  }
+  main >h3{
+    font-size: 1.2rem;
+  }
+  
+}
+
+@keyframes matrix {
+  0% {
+    background-position:
+      0% 100%,
+      50% 100%,
+      100% 100%;
+  }
+  100% {
+    background-position:
+      0% 0%,
+      50% 0%,
+      100% 0%;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+option {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  padding: 0.5rem 1rem !important;
+  font-weight: 500 !important;
+}
+
+/* Option hover/focus states */
+option:hover,
+option:focus,
+option:checked {
+  background-color: #f9fafb !important;
+  color: #000000 !important;
+}
+button,a {
+  gap: 8px;
+}
+/* Firefox option fix */
+@-moz-document url-prefix() {
+  option {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  option:hover {
+    background-color: #f3f4f6 !important;
+  }
+}
+
+/* Responsive option padding */
+@media (max-width: 640px) {
+  option {
+    padding: 0.4rem 0.75rem !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (min-width: 641px) {
+  option {
+    padding: 0.5rem 1rem !important;
+    font-size: 1rem !important;
+  }
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  padding: 0.875rem 2.5rem 0.875rem 1.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #111827;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px;
+}
+
+select:hover {
+  border-color: #9ca3af;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+select:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.15);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+select:disabled {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+[dir="rtl"] select {
+  padding: 0.875rem 1.25rem 0.875rem 2.5rem;
+  background-position: left 1rem center;
+}
+
+select::-ms-expand {
+  display: none;
+}
+.pagenation {
+  font-size: 14px;
+  
+  
+}
+.pagenation select {
+  font-size: 14px;
+  padding: 4px 30px;
+  
+}
