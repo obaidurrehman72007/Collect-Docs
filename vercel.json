@@ -17,6 +17,10 @@
       "destination": "collect_docs_backend-main/src/server.js"
     },
     {
+      "source": "/assets/(.*)",
+      "destination": "/collect_docs_frontend-main/assets/$1"
+    },
+    {
       "source": "/(.*)",
       "destination": "/collect_docs_frontend-main/index.html"
     }
