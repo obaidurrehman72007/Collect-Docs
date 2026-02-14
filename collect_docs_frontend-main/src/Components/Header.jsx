@@ -191,7 +191,7 @@ export default function Header() {
             {t('Navigation')}
           </div>
           {isClient ? (
-            <NavTab ref={el => navLinksRef.current[0] = el} to="/dashboard/requests" icon={<MessageSquare size={18} />} label={t('Document Requests')} active={location.pathname.includes('requests')} isArabic={isArabic} />
+            <NavTab ref={el => navLinksRef.current[0] = el} to="/client-dashboard" icon={<MessageSquare size={18} />} label={t('Document Requests')} active={location.pathname.includes('requests')} isArabic={isArabic} />
           ) : (
             <>
               <NavTab ref={el => navLinksRef.current[0] = el} to="/dashboard/clients" icon={<Users size={18} />} label={t('Clients')} active={location.pathname.includes('clients')} isArabic={isArabic} />
